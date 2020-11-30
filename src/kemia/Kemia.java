@@ -5,6 +5,9 @@
  */
 package kemia;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Axmart
@@ -14,8 +17,20 @@ public class Kemia {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+    static ArrayList<Elem> elemek;
+    
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
+        
+        elemek = Elem.Beolvasas();
+        
+        for (Elem elem : elemek) {
+            System.out.println(elem.Evszam);
+        }
+        
+        
+        
     }
     
 }
