@@ -25,11 +25,27 @@ public class Kemia {
         
         elemek = Elem.Beolvasas();
         
-        for (Elem elem : elemek) {
-            System.out.println(elem.Evszam);
+        ElemekSzama();
+        OkoriElemekSzama();
+        
+        
+    }
+
+    private static void ElemekSzama() {
+        
+        System.out.println("3. feladat: Elemek szama: "+elemek.size());
+        
+    }
+
+    private static void OkoriElemekSzama() {
+        
+        int okoriElemek = 0;
+        while (elemek.get(okoriElemek).getEvszam() == 0) {
+            okoriElemek++;
+            
         }
         
-        
+        System.out.println("4. feladat: Felfedezesek az okorban: "+okoriElemek);
         
     }
     
