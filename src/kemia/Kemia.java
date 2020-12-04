@@ -7,6 +7,8 @@ package kemia;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -29,6 +31,7 @@ public class Kemia {
         OkoriElemekSzama();
         ElemBekeres();
         LeghosszabbIdoszak();
+        SikeresEvek();
         
         
         
@@ -105,6 +108,44 @@ public class Kemia {
         System.out.println("7. feladat: "+leghosszabbIdoszakEvekben + " ev volt a leghosszabb idoszak ket elem felfedezese kozott.");
             
             
+    }
+
+    private static void SikeresEvek() {
+      
+        System.out.println("8. feladat: Statisztika");
+        
+        HashMap<Integer,Integer> evszamok = new HashMap<>();
+        for (Elem elem : elemek) {
+                
+            if (elem.getEvszam() != 0) {
+                
+                if (evszamok.containsKey(elem.getEvszam())) {
+                    evszamok.put(elem.getEvszam(), evszamok.get(elem.getEvszam())+ 1);
+                }else{
+                    
+                    evszamok.put(elem.getEvszam(), 1);
+                    
+                    
+                }
+                
+            }
+            
+            
+        }
+        
+        
+        for (Map.Entry evszam : evszamok.entrySet()) {
+            
+            if ((Integer)evszam.getValue() > 3) {
+                System.out.println("\t"+evszam.getKey()+": "+evszam.getValue()+" db");
+            }
+            
+            
+            
+        }
+        
+        
+        
     }
         
         
