@@ -28,7 +28,7 @@ public class Kemia {
         ElemekSzama();
         OkoriElemekSzama();
         ElemBekeres();
-        
+        LeghosszabbIdoszak();
         
         
         
@@ -83,5 +83,31 @@ public class Kemia {
         
         
     }
+
+    private static void LeghosszabbIdoszak() {
+        
+        int leghosszabbIdoszakEvekben = 0;
+      
+        for (int i = 0; i < elemek.size()-1; i++) {
+            
+            if (elemek.get(i).Evszam != 0) {
+                
+                if (elemek.get(i+1).Evszam - elemek.get(i).Evszam > leghosszabbIdoszakEvekben  ) {
+                    leghosszabbIdoszakEvekben = elemek.get(i+1).Evszam - elemek.get(i).Evszam;
+                }
+                    
+                    
+             }
+
+                
+         } 
+        
+        System.out.println("7. feladat: "+leghosszabbIdoszakEvekben + " ev volt a leghosszabb idoszak ket elem felfedezese kozott.");
+            
+            
+    }
+        
+        
+    
     
 }
