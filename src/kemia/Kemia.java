@@ -27,6 +27,7 @@ public class Kemia {
         
         ElemekSzama();
         OkoriElemekSzama();
+        ElemBekeres();
         
         
     }
@@ -45,7 +46,15 @@ public class Kemia {
             
         }
         
-        System.out.println("4. feladat: Felfedezesek az okorban: "+okoriElemek);
+        System.out.println("4. feladat: Felfedezesek szama az okorban: "+okoriElemek);
+        
+    }
+
+    private static void ElemBekeres() throws IOException {
+        String Input = Elem.ElemBekeres();
+        
+        
+        
         
     }
     

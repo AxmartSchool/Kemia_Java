@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +17,21 @@ import java.util.ArrayList;
  * @author Axmart
  */
 public class Elem {
+
+    private static boolean angolKarakter(String input) {
+        
+        for (char karakter : input.toCharArray()) {
+            
+             if (karakter < 'a' || karakter > 'z') {
+                return false;
+            }
+            
+            
+        }
+        
+        return true;
+        
+    }
     
     int Evszam ;
     String Nev;
@@ -58,6 +74,24 @@ public class Elem {
         this.Rendszam = Integer.parseInt(tomb[3]);
         this.Felfedezo = tomb[4];
     }
+    
+    
+    public static String ElemBekeres() throws IOException{
+        
+        BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+        String output = "";
+        String bekeresSzovege = "5. feladat: Kerek egy vegyjelet: ";
+        String input ;
+        
+        do {            
+            System.out.print(bekeresSzovege);
+             input = inputReader.readLine().trim().toLowerCase();
+        } while (input.length() > 2  || input.length() == 0 || !angolKarakter(input));
+        
+        
+        return output;
+    }
+    
     
     
     public static ArrayList<Elem> Beolvasas() throws FileNotFoundException, IOException{
