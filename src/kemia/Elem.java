@@ -32,6 +32,8 @@ public class Elem {
         return true;
         
     }
+
+
     
     int Evszam ;
     String Nev;
@@ -75,11 +77,12 @@ public class Elem {
         this.Felfedezo = tomb[4];
     }
     
+  
+    
     
     public static String ElemBekeres() throws IOException{
         
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-        String output = "";
         String bekeresSzovege = "5. feladat: Kerek egy vegyjelet: ";
         String input ;
         
@@ -89,7 +92,7 @@ public class Elem {
         } while (input.length() > 2  || input.length() == 0 || !angolKarakter(input));
         
         
-        return output;
+        return input;
     }
     
     

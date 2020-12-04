@@ -30,6 +30,8 @@ public class Kemia {
         ElemBekeres();
         
         
+        
+        
     }
 
     private static void ElemekSzama() {
@@ -51,8 +53,32 @@ public class Kemia {
     }
 
     private static void ElemBekeres() throws IOException {
-        String Input = Elem.ElemBekeres();
+        String input = Elem.ElemBekeres();
+        ElemKereses(input);
         
+        
+        
+    }
+
+    private static void ElemKereses(String input) {
+        System.out.println("6. feladat: Kereses");
+        int szamlalo = 0;
+        while (szamlalo < elemek.size() && !elemek.get(szamlalo).getVegyjel().equalsIgnoreCase(input)) {            
+            szamlalo++;
+            
+        }
+        
+        if (szamlalo == elemek.size()) {
+            System.out.println("\tNincs ilyen elem az adatforrasban!");
+        }else{
+            System.out.println("\tAz elem vegyjele: " +elemek.get(szamlalo).getVegyjel());
+            System.out.println("\tAz elem neve: " +elemek.get(szamlalo).getNev());
+            System.out.println("\tRendszama: " +elemek.get(szamlalo).getRendszam());
+            System.out.println("\tFelfedezes eve: " +elemek.get(szamlalo).getEvszam());
+            System.out.println("\tFelfedezo: " +elemek.get(szamlalo).getFelfedezo());
+            
+            
+        }
         
         
         
